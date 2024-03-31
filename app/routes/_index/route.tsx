@@ -1,11 +1,11 @@
 import type { MetaFunction } from "@remix-run/node";
-import { json, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { imgPng, logoPng } from "~/assets/images";
 import { ExpItem } from "./ExpItem";
 import { GraduationItem } from "./GraduationItem";
 import { Courses } from "./Courses";
 import { Language } from "./Language";
-
+import { json } from "@vercel/remix";
 export const meta: MetaFunction = () => {
   return [
     { title: "Portfólio Tifany" },
