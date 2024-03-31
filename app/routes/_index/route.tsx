@@ -1,5 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
+import { json, useLoaderData } from "@remix-run/react";
 import { imgPng, logoPng } from "~/assets/images";
+import { ExpItem } from "./ExpItem";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,7 +10,39 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader = () => {
+  const expList = [
+    {
+      title: "Fabrica de Software",
+      role: "Desenvolvedora Front-End e UI Designer",
+      description:
+        "Desenvolver um software para a biblioteca do Centro Universitário Vale do Salgado. Responsável pelo Front-end e UX Design da página.",
+      tags: ["html", "css", "js", "ui"],
+      date: new Date("02-03-2021"),
+    },
+    {
+      title: "Projeto Canil",
+      role: "Desenvolvedora Fullstack",
+      description: "Desenvolver um site de busca e adoção de animais.",
+      tags: ["html", "css", "js", "node", "ts", "react", "remix"],
+      date: new Date(),
+    },
+    {
+      title: "Ilucon",
+      role: "Desenvolvedora Fullstack e UI Designer",
+      description:
+        "Desenvolver uma Landing Page para uma empresa local. Mostrando suas principais obras e área de contato.",
+      tags: ["html", "css", "js", "node", "ts", "react", "remix", "ui"],
+      date: new Date(),
+    },
+  ];
+
+  return json({ imgPng, logoPng, expList });
+};
+
 export default function Index() {
+  const { imgPng, logoPng, expList } = useLoaderData<typeof loader>();
+
   return (
     <>
       <header className="header">
@@ -55,56 +89,16 @@ export default function Index() {
             <strong> UX Design</strong> meus projetos.
           </p>
 
-          <div className="empresa">
-            <span className="empresa-ano">2021</span>
-            <h3 className="empresa-titulo">Fábrica de Software</h3>
-            <span className="empresa-titulo">
-              Desenvolvedora Front-End e UI Designer
-            </span>
-            <p className="empresa-texto">
-              Desenvolver um software para a biblioteca do Centro Universitário
-              Vale do Salgado. Responsável pelo Front-end e UX Design da página.
-            </p>
-            <ul className="empresa-habilidades">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>UX Design</li>
-            </ul>
-          </div>
-          <div className="empresa">
-            <span className="empresa-ano">2024</span>
-            <h3 className="empresa-titulo">Projeto Canil</h3>
-            <span className="empresa-titulo">Desenvolvedora Fullstack</span>
-            <p className="empresa-texto">
-              Desenvolver um site de busca e adoção de animais.
-            </p>
-            <ul className="empresa-habilidades">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>NodeJS</li>
-              <li>TypeScript</li>
-            </ul>
-          </div>
-
-          <div className="empresa">
-            <span className="empresa-ano">2024</span>
-            <h3 className="empresa-titulo">Ilucon</h3>
-            <span className="empresa-titulo">
-              Desenvolvedora Fullstack & UI Designer
-            </span>
-            <p className="empresa-texto">
-              Desenvolver uma Landing Page para uma empresa local. Mostrando
-              suas principais obras e área de contato.
-            </p>
-            <ul className="empresa-habilidades">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>NodeJS</li>
-              <li>TypeScript</li>
-              <li>UX Design</li>
-            </ul>
-          </div>
+          {expList.map((expItem, idx) => (
+            <ExpItem
+              key={idx}
+              title={expItem.title}
+              role={expItem.role}
+              description={expItem.description}
+              tags={expItem.tags}
+              date={new Date(expItem.date)}
+            />
+          ))}
         </div>
       </section>
       <section className="formacao" id="formacao" aria-label="Formação">
