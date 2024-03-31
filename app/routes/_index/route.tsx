@@ -2,6 +2,9 @@ import type { MetaFunction } from "@remix-run/node";
 import { json, useLoaderData } from "@remix-run/react";
 import { imgPng, logoPng } from "~/assets/images";
 import { ExpItem } from "./ExpItem";
+import { GraduationItem } from "./GraduationItem";
+import { Courses } from "./Courses";
+import { Language } from "./Language";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,19 +16,11 @@ export const meta: MetaFunction = () => {
 export const loader = () => {
   const expList = [
     {
-      title: "Fabrica de Software",
-      role: "Desenvolvedora Front-End e UI Designer",
-      description:
-        "Desenvolver um software para a biblioteca do Centro Universitário Vale do Salgado. Responsável pelo Front-end e UX Design da página.",
-      tags: ["html", "css", "js", "ui"],
-      date: new Date("02-03-2021"),
-    },
-    {
       title: "Projeto Canil",
       role: "Desenvolvedora Fullstack",
       description: "Desenvolver um site de busca e adoção de animais.",
       tags: ["html", "css", "js", "node", "ts", "react", "remix"],
-      date: new Date(),
+      date: new Date("02-03-2024"),
     },
     {
       title: "Ilucon",
@@ -33,7 +28,15 @@ export const loader = () => {
       description:
         "Desenvolver uma Landing Page para uma empresa local. Mostrando suas principais obras e área de contato.",
       tags: ["html", "css", "js", "node", "ts", "react", "remix", "ui"],
-      date: new Date(),
+      date: new Date("02-03-2024"),
+    },
+    {
+      title: "Fabrica de Software",
+      role: "Desenvolvedora Front-End e UI Designer",
+      description:
+        "Desenvolver um software para a biblioteca do Centro Universitário Vale do Salgado. Responsável pelo Front-end e UX Design da página.",
+      tags: ["html", "css", "js", "ui"],
+      date: new Date("02-03-2021"),
     },
   ];
 
@@ -112,38 +115,17 @@ export default function Index() {
               <strong> Análise e Desenvolvimento de Sistemas</strong>. Além
               disso estou aprimorando meus conhecimentos com cursos online.
             </p>
-            <ul className="faculdade-lista">
-              <li className="faculdade">
-                <span className="faculdade-tipo">Graduação</span>
-                <h3 className="faculdade-curso">
-                  Análise e Desenvolvimento de Sistemas
-                </h3>
-                <span className="faculdade-instituicao">UNIVS</span>
-              </li>
-            </ul>
+            <GraduationItem />
+
             <div className="formacao-extra">
               <div className="cursos">
                 <h3>Cursos On-Line</h3>
-                <ul>
-                  <li>
-                    UI Design para Iniciantes <span>Origamid</span>
-                  </li>
-                  <li>
-                    HTML e CSS para Iniciantes <span>Origamid</span>
-                  </li>
-                  <li>
-                    JavaScript, NodeJS, TypeScript e React <span>B7Web</span>
-                  </li>
-                </ul>
+                <Courses />
               </div>
 
               <div className="idiomas">
                 <h3>idiomas</h3>
-                <ul>
-                  <li>
-                    Inglês <span>/ Básico</span>
-                  </li>
-                </ul>
+                <Language />
               </div>
             </div>
           </div>
