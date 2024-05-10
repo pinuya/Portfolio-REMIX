@@ -1,10 +1,22 @@
-# Welcome to Remix + Vite!
+# Meu Portfolio
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+![GitHub repo size](https://img.shields.io/github/repo-size/pinuya/Portfolio-REMIX?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/pinuya/Portfolio-REMIX?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/pinuya/Portfolio-REMIX?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/pinuya/Portfolio-REMIX?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/pinuya/Portfolio-REMIX?style=for-the-badge)
 
-## Development
+<img src="https://media.discordapp.net/attachments/1226542179380494359/1238571345730863154/image.png?ex=663fc4f4&is=663e7374&hm=a9329365128d7414628cdad7de790fe0c43d3dabc16ea63495cac193bc86b369&=&format=webp&quality=lossless&width=1550&height=193" alt="Landing page">
 
-Run the Vite dev server:
+> Este e o meu projeto de Portfolio, utilizei o template do curso UI/UX do Origamid, resolvi desenvolve-lo utilizando as linguagens JavaScript/TypeScript/CSS e usei como framework principal o Remix, para o deploy, fiz na Vercel.
+
+### Veja a Doc do Remix + Vite!
+
+📖 Leia a [documentação Remix](https://remix.run/docs) e o [documentação Remix + Vite](https://remix.run/docs/en/main/future/vite) para mais detalhes.
+
+## 🚀 Instalação
+
+Execute o servidor de desenvolvimento Vite:
 
 ```shellscript
 npm run dev
@@ -12,25 +24,25 @@ npm run dev
 
 ## Deployment
 
-First, build your app for production:
+Primeiro, crie seu aplicativo para produção:
 
 ```sh
 npm run build
 ```
 
-Then run the app in production mode:
+Em seguida, execute o aplicativo em modo de produção:
 
 ```sh
 npm start
 ```
 
-Now you'll need to pick a host to deploy it to.
+Agora você precisará escolher um host para implantá-lo.
 
-### DIY
+### Faça voce mesmo
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+Se você estiver familiarizado com a implantação de aplicativos Node, o servidor de aplicativos Remix integrado está pronto para produção.
 
-Make sure to deploy the output of `npm run build`
+Certifique-se de implantar a saída de `npm run build`
 
 - `build/server`
 - `build/client`
